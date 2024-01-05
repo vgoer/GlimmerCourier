@@ -7,11 +7,9 @@ use Illuminate\Http\Request;
 
 class CaseContentController extends Controller
 {
-
     /**
      * index pages
      *
-     * @param Request $request
      * @return void
      */
     public function getList(Request $request)
@@ -22,7 +20,6 @@ class CaseContentController extends Controller
     /**
      * 测试接口
      *
-     * @param Request $request
      * @return void
      */
     public function get(Request $request)
