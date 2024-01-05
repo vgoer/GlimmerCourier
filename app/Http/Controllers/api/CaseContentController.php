@@ -16,7 +16,7 @@ class CaseContentController extends Controller
      */
     public function getList(Request $request)
     {
-        echo "case index";
+        echo error(50000);
     }
 
     /**
@@ -29,11 +29,6 @@ class CaseContentController extends Controller
     {
         $params = $request->all();
 
-        echo json_encode(
-            [
-                "id"    => $params['id'],
-                "name"  => $params["name"],
-            ]
-        );
+        echo success($params);
     }
 }
