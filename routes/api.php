@@ -14,6 +14,33 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+
+// 前台接口
+Route::group(["prefix" => "front"], function(){
+
+    // 前台接口
+    Route::get("/",function(){
+        return "front works";
+    });
+
+    Route::get("/case",[\App\Http\Controllers\Api\CaseContentController::class,'getList']);
+    Route::get("/case/get",[App\Http\Controllers\Api\CaseContentController::class,"get"]);
+
+
 });
+
+
+
+// 后台接口
+Route::group(["prefix" => "end"], function(){
+
+    // 后台接口
+    Route::get("/",function(){
+        return "end works";
+    });
+
+
+
+}); 
+
+
